@@ -17,7 +17,7 @@ export const MyHeader = () => {
           {/*felső sor */}
           <div className='flex justify-between items-center'>
             <div className='text-2xl font-bold '>
-              Movie <span className='text-red-500'>Zome</span>
+              Movie<span className='text-red-500'>Sunnyogás</span>
             </div>
             {/* asztali menü */}
             <div className='hidden min-[580px]:flex gap-8'>
