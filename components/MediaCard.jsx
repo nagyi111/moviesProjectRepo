@@ -1,19 +1,21 @@
-
 import { img_300 } from '../src/utils'
+import { MyModal } from './MyModal'
+import { Rating } from './Rating'
+import { useState } from 'react'
 
-export const MediaCard = ({ media }) => {
+export const MediaCard = ({ media, type }) => {
+
+  const [isOpen, setIsOpen] = useState(false)
+
   return (
+    <>
     <div className="card bg-base-100 shadow-sm">
-      <figure>
-        {media.poster_path ? (
+      <figure onClick={()=>setIsOpen(true)}>
           <img
-            src={img_300 + media.poster_path}
+            src={media.poster_path ? img_300+media.poster_path : 'placeholder.jpeg'}
             alt={media.title || media.name || 'Poszter'}
             className="w-full"
           />
-        ) : (
-          <div className="p-8">Nincs poszter</div>
-        )}
       </figure>
 
       <div className="card-body">
@@ -21,14 +23,14 @@ export const MediaCard = ({ media }) => {
           {media.title || media.name}
         </h2>
 
+        <Rating vote={media.vote_average} />
+
         <p>
-          <span>{media.media_type}</span>
-          {' | '}
-          <span>
-            {media.release_date || media.first_air_date}
-          </span>
+          {media.release_date || media.first_air_date}
         </p>
       </div>
     </div>
+    {isOpen && <MyModal {...{isOpen, setIsOpen, media}}/>}
+    </>
   )
 }
