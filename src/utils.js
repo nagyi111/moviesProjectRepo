@@ -82,3 +82,24 @@ export const getSelectedMediaByCateg = async (type, selectedCtg,page=1) => {
   )
   return response.data.results
 }
+
+export const getPopularActors = async (page = 1) => {
+  const response = await api.get(`/person/popular`, {
+    params : {page}
+  })
+  return response.data.results
+}
+
+export const SearchActors = async (query,page = 1) => {
+  const response = await api.get(`/search/person`, {
+    params : {query ,page}
+  })
+  return response.data.results
+}
+
+export const getActorDetails = async (id) => {
+  const response = await api.get(`/person/${id}`, {
+  })
+  return response.data
+}
+

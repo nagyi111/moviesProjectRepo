@@ -1,6 +1,6 @@
 
-import { MediaCard } from './MediaCard'
-import { getTitle } from '../src/utils'
+import {MediaCard} from './MediaCard'
+import {getTitle} from '../src/utils'
 
 export const MediaList = ({ data, type }) => {
   return (
