@@ -17,9 +17,9 @@ const myrouter = createBrowserRouter([
       { path: '/movies', element: <Movies /> },
       { path: '/tv', element: <TvShows /> },
       { path: '/search', element: <SearchMedia /> },
-      { path: '/actors', element: <Actors />},
+      { path: '/actors', element: <Actors /> },
       { path: '*', element: <NotFound /> }
-      
+
     ]
   }
 ])

@@ -103,3 +103,7 @@ export const getActorDetails = async (id) => {
   return response.data
 }
 
+export const getActorCredits = async (id) => {
+    const response = await api.get(`/person/${id}/combined_credits`)
+    return response.data.cast
+}
